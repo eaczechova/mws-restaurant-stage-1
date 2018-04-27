@@ -69,6 +69,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 
 /**
  * Initialize Google map, called from HTML.
+ AIzaSyDO7yafNXQRz5oK1eyFCNftqkAdHzaRQu0
  */
 window.initMap = () => {
   let loc = {
