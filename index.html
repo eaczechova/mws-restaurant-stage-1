@@ -1,51 +1,44 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Restaurant Reviews</title>
-</head>
-
-<body>
-  <header>
-    <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
-    </nav>
-  </header>
-
-  <main id="maincontent">
-    <section id="map-container">
-      <div id="map"></div>
-    </section>
-    <section id="details">
-      <div class="filter-options">
-        <h2>Filter Results</h2>
-        <div id="select-part">
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-            <option value="all">All Neighborhoods</option>
-          </select>
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-            <option value="all">All Cuisines</option>
-          </select>
+<html lang=en>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Restaurant Reviews</title>
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <h1><a href="/">Restaurant Reviews</a></h1>
+      </nav>
+    </header>
+    <main id="maincontent" role="main">
+      <section id="map-container" tabindex="-1" role="region">
+        <div id="map" tabindex="-1"></div>
+      </section>
+      <section id="details" role="region">
+        <div class="filter-options">
+          <h2>Filter Results</h2>
+          <div id="select-part">
+            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" role="region">
+              <option value="all">All Neighborhoods</option>
+            </select>
+            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()"
+            aria-label="Dropdown menu: filter search by cuisine" role="listbox">
+              <option value="all">All Cuisines</option>
+            </select>
+          </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <ul id="restaurants-list"></ul>
-    </section>
-  </main>
-
-  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
-  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY7PYQq32O0krHI4rHFfGGNkxyKb23JGs&libraries=places&callback=initMap"></script>
-
-
-  <footer id="footer">
-    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-  </footer>
-
-</body>
-
+      </section>
+      <section role="region">
+        <ul id="restaurants-list"></ul>
+      </section>
+    </main>
+    <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+    <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY7PYQq32O0krHI4rHFfGGNkxyKb23JGs&libraries=places&callback=initMap"></script>
+    <footer id="footer" role="contentinfo">
+      Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+    </footer>
+  </body>
 </html>

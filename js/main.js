@@ -141,6 +141,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.setAttribute('alt', `${restaurant.name}`);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -159,6 +160,7 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.setAttribute('aria-label', 'See more about restaurant details');
   li.append(more)
 
   return li
@@ -187,12 +189,3 @@ if ('serviceWorker' in navigator) {
 } else {
   console.log('Service workers are not supported.');
 }
-
-// if ('serviceWorker' in navigator) {
-// 	navigator.serviceWorker.register('./sw.index.js', { scope: '/'})
-// 		.then((reg) => {
-// 			console.log('Service Worker registration succeeded', reg);
-// 		}).catch((err) => {
-// 			console.log('Service Worker registration failed', err);
-// 		});
-// }
