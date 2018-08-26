@@ -13,17 +13,17 @@
       </nav>
     </header>
     <main id="maincontent" role="main">
-      <section id="map-container" tabindex="-1" role="region">
+      <section id="map-container" tabindex="-1" role="application" aria-label="locations">
         <div id="map" tabindex="-1"></div>
       </section>
       <section id="details" role="region">
-        <div class="filter-options">
+        <div class="filter-options" role="search" aria-label="Searching for restaurants">
           <h2>Filter Results</h2>
           <div id="select-part">
-            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" role="region">
+            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" role="region" aria-label="Neighborhoods">
               <option value="all">All Neighborhoods</option>
             </select>
-            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()"
+            <select id="cuisines-select" name="cuisines" aria-label="Types of cuisines" onchange="updateRestaurants()"
             aria-label="Dropdown menu: filter search by cuisine" role="listbox">
               <option value="all">All Cuisines</option>
             </select>
